@@ -1,0 +1,43 @@
+import { createFileRoute } from "@tanstack/react-router";
+import type {} from "@tanstack/react-start";
+import { articles } from "@/data/site";
+
+const BASE_URL = "";
+
+export const Route = createFileRoute("/sitemap.xml")({
+  server: {
+    handlers: {
+      GET: async () => {
+        const staticPaths = [
+          { path: "/", priority: "1.0", changefreq: "weekly" as const },
+          { path: "/shop", priority: "0.9", changefreq: "weekly" as const },
+          { path: "/students", priority: "0.8", changefreq: "weekly" as const },
+          { path: "/courses", priority: "0.9", changefreq: "monthly" as const },
+          { path: "/articles", priority: "0.8", changefreq: "weekly" as const },
+          { path: "/about", priority: "0.6", changefreq: "monthly" as const },
+        ];
+        const articlePaths = articles.map((a) => ({
+          path: `/articles/${a.slug}`,
+          priority: "0.7",
+          changefreq: "monthly" as const,
+        }));
+        const all = [...staticPaths, ...articlePaths];
+        const urls = all
+          .map((e) =>
+            [
+              `  <url>`,
+              `    <loc>${BASE_URL}${e.path}</loc>`,
+              `    <changefreq>${e.changefreq}</changefreq>`,
+              `    <priority>${e.priority}</priority>`,
+              `  </url>`,
+            ].join("\n"),
+          )
+          .join("\n");
+        const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
+        return new Response(xml, {
+          headers: { "Content-Type": "application/xml", "Cache-Control": "public, max-age=3600" },
+        });
+      },
+    },
+  },
+});

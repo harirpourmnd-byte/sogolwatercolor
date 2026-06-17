@@ -1,0 +1,110 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-mauve: var(--mauve);
+  --color-fuchsia-art: var(--fuchsia-art);
+  --color-grape: var(--grape);
+  --color-beige: var(--beige);
+  --color-beige-dark: var(--beige-dark);
+  --color-autumn: var(--autumn);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --font-display: "Playfair Display", "Vazirmatn", serif;
+  --font-body: "Vazirmatn", "Inter", sans-serif;
+}
+
+:root {
+  --radius: 1rem;
+  /* Palette from reference */
+  --mauve: oklch(0.82 0.04 350);          /* DMC 3727 Light Antique Mauve */
+  --fuchsia-art: oklch(0.55 0.16 350);    /* DMC 33 Fuchsia */
+  --grape: oklch(0.35 0.10 350);          /* DMC 3834 Dark Grape */
+  --beige: oklch(0.75 0.05 80);           /* DMC 642 Dark Beige Gray */
+  --beige-dark: oklch(0.48 0.06 60);      /* DMC 3790 Ultra Dark Beige */
+  --autumn: oklch(0.72 0.18 55);          /* DMC 3853 Dark Autumn */
+
+  --background: oklch(0.97 0.012 60);
+  --foreground: oklch(0.22 0.05 350);
+  --card: oklch(0.99 0.008 60);
+  --card-foreground: oklch(0.22 0.05 350);
+  --primary: var(--grape);
+  --primary-foreground: oklch(0.98 0.008 60);
+  --secondary: var(--mauve);
+  --secondary-foreground: var(--grape);
+  --muted: oklch(0.93 0.015 60);
+  --muted-foreground: oklch(0.45 0.04 350);
+  --accent: var(--autumn);
+  --accent-foreground: oklch(0.98 0.008 60);
+  --border: oklch(0.88 0.02 60);
+  --ring: var(--fuchsia-art);
+
+  --paper-grad: radial-gradient(at 20% 10%, oklch(0.95 0.03 350 / 0.5), transparent 50%),
+                radial-gradient(at 80% 90%, oklch(0.92 0.06 55 / 0.4), transparent 50%),
+                oklch(0.97 0.012 60);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper-grad);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    direction: rtl;
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, .display { font-family: var(--font-display); letter-spacing: -0.02em; }
+}
+
+/* Paper texture overlay */
+@utility paper-texture {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.15 0 0 0 0 0.25 0 0 0 0.12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.4; pointer-events: none; mix-blend-mode: multiply;
+  }
+}
+
+@utility watercolor-text {
+  background: linear-gradient(135deg, var(--grape), var(--fuchsia-art) 40%, var(--autumn));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(20px, -30px) rotate(8deg); }
+}
+@keyframes bleed-in {
+  0% { opacity: 0; filter: blur(20px); transform: scale(0.9); }
+  100% { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+@keyframes drip {
+  0% { transform: translateY(-100%) scaleY(0.3); opacity: 0; }
+  60% { opacity: 1; }
+  100% { transform: translateY(0) scaleY(1); opacity: 0.7; }
+}
