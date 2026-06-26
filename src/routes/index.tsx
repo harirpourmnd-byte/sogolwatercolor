@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { paintings, courses, articles, brand } from "@/data/site";
 import hero from "@/assets/hero-watercolor.jpg";
 import splash from "@/assets/splash-1.png";
-import sogol from "@/assets/sogol.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -95,7 +95,7 @@ function Index() {
               className="absolute bottom-6 left-6 right-6 md:right-auto md:max-w-xs rounded-2xl bg-card/85 backdrop-blur p-4 shadow-xl border border-border"
             >
               <div className="flex items-center gap-3">
-                <img src={sogol} alt={brand.artist} loading="lazy" className="h-12 w-12 rounded-full object-cover" />
+                <img src={""} alt={brand.artist} loading="lazy" className="h-12 w-12 rounded-full object-cover" />
                 <div className="text-sm min-w-0">
                   <div className="font-semibold truncate">استاد {brand.artist}</div>
                   <div className="text-xs text-muted-foreground">بنیان‌گذار سوگالری</div>

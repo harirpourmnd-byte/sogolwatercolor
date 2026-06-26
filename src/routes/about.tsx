@@ -3,7 +3,6 @@ import { motion } from "motion/react";
 import { WatercolorBg } from "@/components/WatercolorBg";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import sogol from "@/assets/sogol.jpg";
 import { brand } from "@/data/site";
 
 export const Route = createFileRoute("/about")({
@@ -14,8 +13,8 @@ export const Route = createFileRoute("/about")({
       { property: "og:title", content: "درباره سوگل فتحی | سوگالری" },
       { property: "og:description", content: "سفر هنری استاد سوگل فتحی، هنرمند آبرنگ ایرانی." },
       { property: "og:url", content: "/about" },
-      { property: "og:image", content: sogol },
-    ],
+    { property: "og:image", content: "" },
+],
     links: [{ rel: "canonical", href: "/about" }],
   }),
   component: About,
@@ -32,7 +31,7 @@ function About() {
             initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9 }}
             className="aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl paper-texture"
           >
-            <img src={sogol} alt="سوگل فتحی" className="h-full w-full object-cover" width={800} height={1024} />
+            <img src={""} alt="سوگل فتحی" className="h-full w-full object-cover" width={800} height={1024} />
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.1 }}>
             <p className="text-xs uppercase tracking-[0.3em] text-autumn">بنیان‌گذار سوگالری</p>

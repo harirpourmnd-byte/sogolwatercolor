@@ -1,17 +1,7 @@
-import art1 from "@/assets/art-1.jpg";
-import art2 from "@/assets/art-2.jpg";
-import art3 from "@/assets/art-3.jpg";
-import art4 from "@/assets/art-4.jpg";
-import art5 from "@/assets/art-5.jpg";
-import art6 from "@/assets/art-6.jpg";
-import st1 from "@/assets/student-1.jpg";
-import st2 from "@/assets/student-2.jpg";
-import st3 from "@/assets/student-3.jpg";
-import c1 from "@/assets/course-1.jpg";
-import c2 from "@/assets/course-2.jpg";
-import b1 from "@/assets/blog-1.jpg";
-import b2 from "@/assets/blog-2.jpg";
-import b3 from "@/assets/blog-3.jpg";
+const art1 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E", art2 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E", art3 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E", art4 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E", art5 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E", art6 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E";
+const st1 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E", st2 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E", st3 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E";
+const c1 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E", c2 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E";
+const b1 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E", b2 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E", b3 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23e0d5cc'/%3E%3C/svg%3E";
 
 export const brand = {
   name: "سوگالری",
@@ -158,3 +148,7 @@ export const articles: Article[] = [
     ],
   },
 ];
+
+
+
+
