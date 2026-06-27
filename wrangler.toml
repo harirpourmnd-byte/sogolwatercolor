@@ -2,7 +2,7 @@ name = "sogolwatercolor"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
 
-main = "./dist/server/cloudflare-workers/index.mjs"
+main = "./dist/server/server.js"
 
 [assets]
 directory = "./dist/client"
