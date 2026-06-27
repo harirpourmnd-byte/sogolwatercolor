@@ -2,7 +2,7 @@ name = "sogolwatercolor"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
 
-main = "./dist/server/server.js"
+main = "src/server.ts"
 
 [assets]
 directory = "./dist/client"
