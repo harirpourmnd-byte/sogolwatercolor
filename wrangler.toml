@@ -1,10 +1,8 @@
-﻿name = "sogolwatercolor"
+name = "sogolwatercolor"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
 
-[site]
-bucket = "./dist/client"
+main = "./dist/server/cloudflare-workers/index.mjs"
 
-[[rules]]
-type = "ESModule"
-globs = ["**/*.js"]
+[assets]
+directory = "./dist/client"
