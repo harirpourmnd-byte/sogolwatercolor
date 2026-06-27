@@ -2,12 +2,7 @@ name = "sogolwatercolor"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
 
-main = "src/server.ts"
+main = "worker.js"
 
 [assets]
 directory = "./dist/client"
-
-[alias]
-"#tanstack-router-entry" = "./src/routeTree.gen.ts"
-"#tanstack-start-entry" = "./src/router.tsx"
-"tanstack-start-manifest:v" = "./dist/server/assets/_tanstack-start-manifest_v-C2VFowrO.js"
